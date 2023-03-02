@@ -4,8 +4,8 @@ if not status then
 	vim.notify("没有找到 toggleterm", "error")
 	return
 end
-local Term = require("toggleterm.terminal")
-local Terminal = Term.Terminal
+-- local Term = require("toggleterm.terminal")
+-- local Terminal = Term.Terminal
 
 toggleterm.setup({
 	size = function(term)
@@ -26,3 +26,4 @@ toggleterm.setup({
 		},
 	},
 })
+
