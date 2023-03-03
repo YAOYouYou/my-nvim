@@ -6,7 +6,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
-
+vim.keymap.set({ 'n'}, '<C-s>', ':w<CR>', { desc = "Save File" })
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -50,3 +50,13 @@ vim.keymap.set('n', '<Leader>ds', function()
   local widgets = require('dap.ui.widgets')
   widgets.centered_float(widgets.scopes)
 end)
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Diagnostic Goto Prev" })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Diagnostic Goto Next" })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Diagnostic Open Float" })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Diagnostic Setloclist" })
+
+
+-- NvimTree
+vim.keymap.set('n', '<Leader>nt', function() require("nvim-tree").toggle() end, { desc = "NvimTree Toggle" })

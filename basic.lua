@@ -1,3 +1,13 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+-- nvim-tree setup
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
@@ -25,6 +35,9 @@ vim.wo.signcolumn = "yes"
 -- :wq
 -- vim.o.colorcolumn = "80"
 
+-- vim 中tab显示的长度默认是八个空格
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 -- TODO: sessionoptions
 -- -- indent
 -- -- 缩进2个空格等于一个Tab
@@ -135,3 +148,16 @@ vim.opt.foldlevel = 99
 
 -- 启用vim自带的插件检测文件类型
 vim.opt.filetype = "plugin"
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
+

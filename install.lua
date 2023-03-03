@@ -30,6 +30,7 @@ local plugins = {
   'folke/which-key.nvim',
 
   'nvim-lualine/lualine.nvim',
+'akinsho/bufferline.nvim',
 
   'nvim-tree/nvim-tree.lua',
   'nvim-tree/nvim-web-devicons', -- optional, for file icons
