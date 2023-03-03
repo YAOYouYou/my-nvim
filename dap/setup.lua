@@ -5,31 +5,31 @@ dapui.setup({
 	-- Expand lines larger than the window
 	-- Requires >= 0.7
 	-- expand_lines = vim.fn.has("nvim-0.7") == 1,
-	expand_lines = false,
-	layouts = {
-		-- {
-		-- 	elements = {
-		-- 		-- Elements can be strings or table with id and size keys.
-		-- 		{ id = "scopes", size = 0.25 },
-		-- 		"breakpoints",
-		-- 		"stacks",
-		-- 		"watches",
-		-- 	},
-		-- 	size = 30, -- 30 columns
-		-- 	position = "right",
-		-- },
-		{
-			elements = {
-				"repl",
-				"console",
-			},
-			size = 0.3, -- 25% of total lines
-			position = "bottom",
-		},
-	},
-	floating = {
-		border = "rounded", -- Border style. Can be "single", "double" or "rounded"
-	},
+	-- expand_lines = false,
+	-- layouts = {
+	-- 	-- {
+	-- 	-- 	elements = {
+	-- 	-- 		-- Elements can be strings or table with id and size keys.
+	-- 	-- 		{ id = "scopes", size = 0.25 },
+	-- 	-- 		"breakpoints",
+	-- 	-- 		"stacks",
+	-- 	-- 		"watches",
+	-- 	-- 	},
+	-- 	-- 	size = 30, -- 30 columns
+	-- 	-- 	position = "right",
+	-- 	-- },
+	-- 	{
+	-- 		elements = {
+	-- 			"repl",
+	-- 			"console",
+	-- 		},
+	-- 		size = 0.3, -- 25% of total lines
+	-- 		position = "bottom",
+	-- 	},
+	-- },
+	-- floating = {
+	-- 	border = "rounded", -- Border style. Can be "single", "double" or "rounded"
+	-- },
 })
 
 --dap-ui config

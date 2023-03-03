@@ -7,3 +7,6 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+
+require("nvim-web-devicons").get_icons()

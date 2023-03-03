@@ -53,7 +53,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',          opts = {} },
   { -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -100,7 +100,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',         opts = {} },
   --
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -127,17 +127,21 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
+  'nvim-tree/nvim-web-devicons', -- optional, for file icons
   -- 目录树
   {
     'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   },
 
--- DAP Client
-  {"mfussenegger/nvim-dap"},
-  {"theHamsta/nvim-dap-virtual-text"},
-  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
-  {"leoluz/nvim-dap-go"},
+  -- DAP Client
+  { "mfussenegger/nvim-dap" },
+  { "theHamsta/nvim-dap-virtual-text" },
+  { "rcarriga/nvim-dap-ui",           dependencies = { "mfussenegger/nvim-dap" } },
+  { "leoluz/nvim-dap-go" },
 
   -- Terminal
   {
