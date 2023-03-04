@@ -11,11 +11,3 @@ require("lsp.setup")
 require("dap.setup")
 require("autocmd")
 require("usercmd")
-
-
-
-
-
-
-
--- OR setup with some options
