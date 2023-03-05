@@ -14,6 +14,8 @@ vim.keymap.set("n", 's', "<nop>", opts)
 -- save file
 vim.keymap.set({ 'n'}, '<C-s>', ':w<CR>', { desc = "Save File" })
 
+-- all select
+vim.keymap.set({'n', 'i'}, '<C-a>', '<Esc>ggVG')
 -- quick movement
 vim.keymap.set("n", "J", "5j", opts)
 vim.keymap.set("n", "K", "5k", opts)

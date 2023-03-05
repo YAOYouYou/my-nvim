@@ -3,30 +3,41 @@ require("basic")
 require("keymaps")
 require("plugins")
 
+-- apperance
+require("appearance.theme")
+require("appearance.statusline")
+require("appearance.tabline")
+require("appearance.dashboard")
 
-require('dashboard')
-require("config.onedark")
-require("config.lualine")
-require("config.nvim-tree")
-require("config.bufferline")
-require("config.indentline")
-require("config.comment")
-require("config.whichkey")
-require("config.autopairs")
-require("config.hop")
-require("config.telescope")
-require("config.toggleterm")
-require("config.noice")
-require("config.undotree")
-require("config.surround")
+-- magic
+require("magic.autopairs")
+require("magic.comment")
+require("magic.surround")
+require("magic.hop")
 
-require("config.vcs")
+-- better
+require("better.nvim-tree")
+require("better.whichkey")
+require("better.telescope")
+require("better.toggleterm")
+require("better.noice")
+require("better.undotree")
+require("better.indentline")
+require("better.nvim-treesitter")
 
-require("config.mason")
-require("config.fidget")
-require("config.nvim-treesitter")
-require("lsp.setup")
-require("dap.setup")
-require("cmp.setup")
---require("autocmd")
+-- vcs
+require("vcs.vcs")
+
 require("usercmd")
+
+-- lsp
+require("lsp.mason")
+require("lsp.fidget")
+require("lsp.setup")
+
+-- dap
+require("dap.setup")
+
+-- cmp
+require("cmp.setup")
+

@@ -1,3 +1,4 @@
+
 local function fg(name)
   return function()
     local hl = vim.api.nvim_get_hl_by_name(name, true)
@@ -6,8 +7,8 @@ local function fg(name)
 end
 
 local lsp_client = {
-  function(msg)
-    msg = msg or ""
+  function()
+	local msg = 'no lsp'
     local buf_clients = vim.lsp.get_active_clients { bufnr = 0 }
 
     if next(buf_clients) == nil then
