@@ -74,7 +74,7 @@ vim.o.autoread = true
 vim.bo.autoread = true
 
 -- 禁止折行
-vim.wo.wrap = false
+vim.wo.wrap = true
 -- 光标在行首尾时<Left><Right>可以跳到下一行
 vim.o.whichwrap = "<,>,[,]"
 -- 允许隐藏被修改过的buffer
@@ -113,7 +113,7 @@ vim.g.completeopt = "menu,menuone,noselect,noinsert"
 -- vim.opt.list = require("commConf").listchar
 -- vim.o.listchars = "tab:··,trail:▫"
 -- vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
+-- vim.opt.listchars:append("eol:↴")
 vim.opt.listchars:append("trail:▫")
 -- vim.o.list = false
 -- vim.o.listchars = "space:·,tab:··"
