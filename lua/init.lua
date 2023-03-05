@@ -3,6 +3,8 @@ require("basic")
 require("keymaps")
 require("plugins")
 
+
+require('dashboard')
 require("config.onedark")
 require("config.lualine")
 require("config.nvim-tree")
@@ -14,8 +16,11 @@ require("config.autopairs")
 require("config.hop")
 require("config.telescope")
 require("config.toggleterm")
+require("config.noice")
 require("config.undotree")
 require("config.surround")
+
+require("config.vcs")
 
 require("config.mason")
 require("config.fidget")
