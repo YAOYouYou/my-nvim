@@ -1,4 +1,3 @@
-
 local function fg(name)
   return function()
     local hl = vim.api.nvim_get_hl_by_name(name, true)
@@ -8,58 +7,47 @@ end
 
 local lsp_client = {
   function()
-	local msg = 'no lsp'
-    local buf_clients = vim.lsp.get_active_clients { bufnr = 0 }
-
-    if next(buf_clients) == nil then
-      if type(msg) == "boolean" or #msg == 0 then
-        return ""
-      end
+    local msg = "No Active Lsp"
+    local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then
       return msg
     end
-
-    local buf_ft = vim.bo.filetype
-    local buf_client_names = {}
-
-    -- add client
-    for _, client in pairs(buf_clients) do
-      if client.name ~= "null-ls" then
-        table.insert(buf_client_names, client.name)
+    -- first LSP
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        if client.name ~= "null-ls" and client.name ~= "copilot" then
+          return client.name
+        end
       end
     end
-
-    -- add formatter
-    local lsp_utils = require "plugins.lsp.utils"
-    local formatters = lsp_utils.list_formatters(buf_ft)
-    vim.list_extend(buf_client_names, formatters)
-
-    -- add linter
-    local linters = lsp_utils.list_linters(buf_ft)
-    vim.list_extend(buf_client_names, linters)
-
-    -- add hover
-    local hovers = lsp_utils.list_hovers(buf_ft)
-    vim.list_extend(buf_client_names, hovers)
-
-    -- add code action
-    local code_actions = lsp_utils.list_code_actions(buf_ft)
-    vim.list_extend(buf_client_names, code_actions)
-
-    local hash = {}
-    local client_names = {}
-    for _, v in ipairs(buf_client_names) do
-      if not hash[v] then
-        client_names[#client_names + 1] = v
-        hash[v] = true
+    -- if don't have LSP then null-ls
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        if client.name == "null-ls" then
+          return client.name
+        end
       end
     end
-    table.sort(client_names)
-    return icons.ui.Code .. " " .. table.concat(client_names, ", ") .. " " .. icons.ui.Code
+    -- if don't have null-ls then orthers
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
+      end
+    end
+    return msg
   end,
-  -- icon = icons.ui.Code,
-  colored = true,
+  -- icon = " LSP:",
+  -- icon = "🏗︎ LSP:",
+  icon = "👻 LSP:",
+  color = { --[[ fg = "#ffffff", ]]
+    gui = "bold",
+  },
   on_click = function()
-    vim.cmd [[LspInfo]]
+    vim.cmd("LspInfo")
   end,
 }
 
