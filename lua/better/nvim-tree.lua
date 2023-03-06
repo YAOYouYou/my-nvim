@@ -7,23 +7,31 @@ vim.opt.termguicolors = true
 
 
 local config = {
+  root_folder_modifier = ":t",
   sort_by = "case_sensitive",
   renderer = {
     group_empty = true,
+    diagnostics = {
+      enable = true,
+      show_on_dirs = true,
+      icons = {
+        hint = "",
+        info = "",
+        warning = "",
+        error = "",
+      },
+    },
+
   },
   filters = {
     dotfiles = true,
   },
   update_focused_file = {
-      enable = true,
-      update_cwd = true,
-    },
+    enable = true,
+    update_cwd = true,
+  },
 }
 
 require("nvim-tree").setup(config)
 require("nvim-web-devicons").get_icons()
-
-
--- keymap
-vim.keymap.set('n', '<Leader>nt', function() require("nvim-tree").toggle() end, { desc = "NvimTree Toggle" })
 

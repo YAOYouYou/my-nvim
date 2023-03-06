@@ -20,6 +20,7 @@ require("better.nvim-tree")
 require("better.whichkey")
 require("better.telescope")
 require("better.toggleterm")
+require("better.aerial")
 require("better.noice")
 require("better.undotree")
 require("better.indentline")
@@ -41,3 +42,4 @@ require("dap.setup")
 -- cmp
 require("cmp.setup")
 
+require("plugin_keymaps")

@@ -55,11 +55,11 @@ local plugins = {
 		end,
 	},
 
-
 	'folke/neodev.nvim',
 	'neovim/nvim-lspconfig',
 	'williamboman/mason.nvim',
 	'williamboman/mason-lspconfig.nvim',
+	"jose-elias-alvarez/null-ls.nvim",	-- inject LSP diagnostics, code actions, and more
 	'j-hui/fidget.nvim',
 
 	'hrsh7th/nvim-cmp',

@@ -42,7 +42,7 @@ local lsp_client = {
   end,
   -- icon = " LSP:",
   -- icon = "🏗︎ LSP:",
-  icon = "👻 LSP:",
+  icon = "👻 :",
   color = { --[[ fg = "#ffffff", ]]
     gui = "bold",
   },
