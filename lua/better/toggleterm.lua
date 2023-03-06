@@ -389,7 +389,7 @@ local keymaps = require("plugin_keymaps").toggleterm_keymaps
 
 function _G.set_terminal_keymaps()
 	keymaps()
-  end
+end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
