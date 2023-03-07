@@ -29,7 +29,9 @@ require("better.trouble")
 
 -- vcs
 require("vcs.diffview")
+require("vcs.neogit")
 require("vcs.vcs")
+
 
 require("usercmd")
 

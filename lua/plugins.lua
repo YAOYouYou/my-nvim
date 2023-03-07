@@ -59,7 +59,7 @@ local plugins = {
 	'neovim/nvim-lspconfig',
 	'williamboman/mason.nvim',
 	'williamboman/mason-lspconfig.nvim',
-	"jose-elias-alvarez/null-ls.nvim",	-- inject LSP diagnostics, code actions, and more
+	"jose-elias-alvarez/null-ls.nvim", -- inject LSP diagnostics, code actions, and more
 	'j-hui/fidget.nvim',
 
 	'hrsh7th/nvim-cmp',
@@ -80,21 +80,9 @@ local plugins = {
 	-- 'tpope/vim-fugitive',
 	-- 'tpope/vim-rhubarb',
 	-- 'lewis6991/gitsigns.nvim',
-	{
-		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
-		config = true,
-	},
-	{
-		"TimUntersberger/neogit",
-		cmd = "Neogit",
-		opts = {
-			integrations = { diffview = true },
-		},
-		keys = {
-			{ "<leader>gs", "<cmd>Neogit kind=tab<cr>", desc = "Status" },
-		},
-	},
+
+	"sindrets/diffview.nvim",
+	"TimUntersberger/neogit",
 	{
 		"tpope/vim-fugitive",
 		cmd = { "Git", "GBrowse", "Gdiffsplit", "Gvdiffsplit" },

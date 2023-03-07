@@ -4,6 +4,8 @@ local opts = { noremap = true, silent = true }
 -- NvimTree
 keymap('n', '<Leader>nt', ':lua require("nvim-tree").toggle()<CR>', { desc = "NvimTree Toggle" })
 
+-- neogit
+keymap("n", "<leader>gs", "<cmd>Neogit kind=tab<cr>", { desc = "Open Neogit" })
 
 
 -- telescope
