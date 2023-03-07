@@ -25,8 +25,10 @@ require("better.noice")
 require("better.undotree")
 require("better.indentline")
 require("better.nvim-treesitter")
+require("better.trouble")
 
 -- vcs
+require("vcs.diffview")
 require("vcs.vcs")
 
 require("usercmd")

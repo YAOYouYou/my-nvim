@@ -67,7 +67,7 @@ local plugins = {
 	'L3MON4D3/LuaSnip',
 	'saadparwaiz1/cmp_luasnip',
 
-
+	"folke/trouble.nvim",
 
 	"mfussenegger/nvim-dap",
 	"theHamsta/nvim-dap-virtual-text",
