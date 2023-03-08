@@ -27,8 +27,10 @@ vim.keymap.set('n', "<leader>vo", ":Telescope aerial<cr>", { desc = "Code Outlin
 -- todo-comments
 vim.keymap.set("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
 vim.keymap.set("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
--- todo: 123:why
+
 -- undotree
+vim.keymap.set('n', '<leader>U', vim.cmd.UndotreeToggle, { desc = "UndotreeToggle" })
+
 -- lsp
 M.lsp_keymaps = function(bufnr)
 	local nmap = function(keys, func, desc)
