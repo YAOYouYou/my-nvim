@@ -25,6 +25,9 @@ vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc 
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', "<leader>vo", ":Telescope aerial<cr>", { desc = "Code Outline" })
 -- todo-comments
+vim.keymap.set("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
+vim.keymap.set("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
+-- todo: 123:why
 -- undotree
 -- lsp
 M.lsp_keymaps = function(bufnr)

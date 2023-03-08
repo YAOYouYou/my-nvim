@@ -26,6 +26,7 @@ require("better.undotree")
 require("better.indentline")
 require("better.nvim-treesitter")
 require("better.trouble")
+require("better.todo-comments")
 
 -- vcs
 require("vcs.diffview")
