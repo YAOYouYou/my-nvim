@@ -181,6 +181,8 @@ local plugins = {
 		end,
 	},
 
+	"iamcco/markdown-preview.nvim",
+	"dhruvasagar/vim-table-mode",
 }
 
 
