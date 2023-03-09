@@ -31,8 +31,6 @@ require("vcs.setup")
 require("usercmd")
 
 -- lsp
-require("lsp.mason")
-require("lsp.fidget")
 require("lsp.setup")
 
 -- dap
