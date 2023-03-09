@@ -4,10 +4,7 @@ require("keymaps")
 require("plugins")
 
 -- apperance
-require("appearance.theme")
-require("appearance.statusline")
-require("appearance.tabline")
-require("appearance.dashboard")
+require("appearance.setup")
 
 -- magic
 require("magic.autopairs")
@@ -29,10 +26,7 @@ require("better.trouble")
 require("better.todo-comments")
 
 -- vcs
-require("vcs.diffview")
-require("vcs.neogit")
-require("vcs.vcs")
-
+require("vcs.setup")
 
 require("usercmd")
 
