@@ -11,6 +11,7 @@ require("magic.autopairs")
 require("magic.comment")
 require("magic.surround")
 require("magic.hop")
+require("magic.tabout")
 
 -- better
 require("better.nvim-tree")

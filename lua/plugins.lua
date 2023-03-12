@@ -26,12 +26,15 @@ local plugins = {
 	'nvim-tree/nvim-tree.lua',
 	'nvim-tree/nvim-web-devicons',
 	'lukas-reineke/indent-blankline.nvim',
+
 	"kylechui/nvim-surround",
-	'folke/which-key.nvim',
-	'tpope/vim-sleuth',
-	'numToStr/Comment.nvim',
 	'windwp/nvim-autopairs',
 	'phaazon/hop.nvim',
+	'numToStr/Comment.nvim',
+	'abecodes/tabout.nvim',
+
+	'folke/which-key.nvim',
+	'tpope/vim-sleuth',
 	'akinsho/toggleterm.nvim',
 	'mbbill/undotree',
 	"folke/todo-comments.nvim",
