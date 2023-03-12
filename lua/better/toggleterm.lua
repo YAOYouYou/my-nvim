@@ -377,13 +377,13 @@ end, {
 	end,
 })
 
+-- keymaps
+vim.keymap.set("n", 'tf', function() toggleA() end, { desc = "opent float terminal" })
+vim.keymap.set("n", 'ts', function() toggleB() end, { desc = "opent right side terminal" })
+vim.keymap.set("n", 'tb', function() toggleC() end, { desc = "opent bottom terminal" })
+vim.keymap.set("n", 'trs', function() toggleD() end, { desc = "opent 0.8 right side terminal" })
+vim.keymap.set("n", 'tg', function() toggleG() end, { desc = "opent lazygit terminal" })
 
--- keymap
-vim.keymap.set("n", '<leader>tf', function() toggleA() end, { desc = "opent float terminal" })
-vim.keymap.set("n", '<leader>ts', function() toggleB() end, { desc = "opent right side terminal" })
-vim.keymap.set("n", '<leader>tb', function() toggleC() end, { desc = "opent bottom terminal" })
-vim.keymap.set("n", '<leader>trs', function() toggleD() end, { desc = "opent 0.8 right side terminal" })
-vim.keymap.set("n", '<leader>tg', function() toggleG() end, { desc = "opent lazygit terminal" })
 
 local keymaps = require("plugin_keymaps").toggleterm_keymaps
 
