@@ -6,6 +6,9 @@ require("plugins")
 -- apperance
 require("appearance.setup")
 
+-- vcs
+require("vcs.setup")
+
 -- magic
 require("magic.autopairs")
 require("magic.comment")
@@ -26,8 +29,6 @@ require("better.nvim-treesitter")
 require("better.trouble")
 require("better.todo-comments")
 
--- vcs
-require("vcs.setup")
 
 require("usercmd")
 
