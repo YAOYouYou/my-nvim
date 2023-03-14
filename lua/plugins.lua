@@ -76,6 +76,7 @@ local plugins = {
 	"theHamsta/nvim-dap-virtual-text",
 	"rcarriga/nvim-dap-ui",
 	"leoluz/nvim-dap-go",
+	"mfussenegger/nvim-dap-python",
 
 	'nvim-treesitter/nvim-treesitter',
 	'nvim-treesitter/nvim-treesitter-textobjects',

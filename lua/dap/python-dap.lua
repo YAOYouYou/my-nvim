@@ -1,13 +1,10 @@
 local dap = require('dap')
+local python_path = vim.fn.trim(vim.fn.system("which python"))
 
-dap.configurations.python = {
-  {
-    type = 'python';
-    request = 'launch';
-    name = "Launch file";
-    program = "${file}";
-    pythonPath = function()
-      return '/opt/homebrew/bin/python3'
-    end;
-  },
+dap.adapters.python = {
+  type = 'executable';
+  command = python_path;
+  args = { '-m', 'debugpy.adapter' };
 }
+
+require('dap-python').setup(python_path)

@@ -63,5 +63,27 @@ M.toggleterm_keymaps = function()
 	vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 end
 
+-- dap
+vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
+vim.keymap.set("n", "<F9>", ":lua require'dap'.step_into()<CR>", opts)
+vim.keymap.set("n", "<F10>", ":lua require'dap'.step_over()<CR>", opts)
+vim.keymap.set("n", "<F11>", ":lua require'dap'.step_out()<CR>", opts)
+vim.keymap.set("n", "<Leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+vim.keymap.set(
+	"n",
+	"<Leader>B",
+	":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+	opts
+)
+vim.keymap.set(
+	"n",
+	"<Leader>lp",
+	":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+	opts
+)
+vim.keymap.set("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", opts)
+vim.keymap.set("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", opts)
+
+
 
 return M
