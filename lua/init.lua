@@ -38,6 +38,8 @@ require("lsp.setup")
 -- dap
 require("dap.setup")
 
+-- test
+require("test.setup")
 -- cmp
 require("cmp.setup")
 
