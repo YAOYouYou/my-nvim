@@ -30,6 +30,7 @@ local plugins = {
 	"kylechui/nvim-surround",
 	'windwp/nvim-autopairs',
 	'phaazon/hop.nvim',
+	'ggandor/leap.nvim',
 	'numToStr/Comment.nvim',
 	'abecodes/tabout.nvim',
 
@@ -41,6 +42,7 @@ local plugins = {
 	"folke/noice.nvim",
 	"MunifTanjim/nui.nvim",
 	"rcarriga/nvim-notify",
+	'ojroques/nvim-osc52',
 
 	'nvim-telescope/telescope.nvim',
 	"nvim-telescope/telescope-file-browser.nvim",

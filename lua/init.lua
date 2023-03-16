@@ -6,6 +6,8 @@ require("plugins")
 
 -- apperance
 require("appearance.setup")
+require("better.indentline")
+require("better.nvim-treesitter")
 
 -- vcs
 require("vcs.setup")
@@ -14,7 +16,8 @@ require("vcs.setup")
 require("magic.autopairs")
 require("magic.comment")
 require("magic.surround")
-require("magic.hop")
+-- require("magic.hop")
+require("magic.leap")
 require("magic.tabout")
 
 -- better
@@ -24,11 +27,10 @@ require("better.telescope")
 require("better.toggleterm")
 require("better.aerial")
 require("better.undotree")
-require("better.indentline")
-require("better.nvim-treesitter")
 require("better.trouble")
 require("better.todo-comments")
-
+require("better.noice")
+require("better.osc52")
 
 require("usercmd")
 
