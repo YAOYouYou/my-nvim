@@ -87,7 +87,6 @@ local plugins = {
 	"antoinemadec/FixCursorHold.nvim",
 	"nvim-neotest/neotest-python",
 	"nvim-neotest/neotest-go",
-	
 	-- 'tpope/vim-fugitive',
 	-- 'tpope/vim-rhubarb',
 	-- 'lewis6991/gitsigns.nvim',

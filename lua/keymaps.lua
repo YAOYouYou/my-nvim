@@ -9,7 +9,7 @@ local opts = { noremap = true, silent = true }
 
 
 -- del s
-vim.keymap.set("n", 's', "<nop>", opts)
+-- vim.keymap.set("n", 's', "<nop>", opts)
 
 -- save file
 vim.keymap.set({ 'n' }, '<C-s>', ':w<CR>', { desc = "Save File" })
@@ -45,10 +45,10 @@ vim.keymap.set("v", "<A-up>", ":m '<-2<CR>gv=gv", opts)
 vim.keymap.set("v", "p", '"_dP', opts)
 
 -- split screen
-vim.keymap.set("n", "sk", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", opts)
-vim.keymap.set("n", "sj", ":set splitbelow<CR>:split<CR>", opts)
-vim.keymap.set("n", "sh", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", opts)
-vim.keymap.set("n", "sl", ":set splitright<CR>:vsplit<CR>", opts)
+vim.keymap.set("n", "<C-s>k", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", opts)
+vim.keymap.set("n", "<C-s>j", ":set splitbelow<CR>:split<CR>", opts)
+vim.keymap.set("n", "<C-s>h", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", opts)
+vim.keymap.set("n", "<C-s>l", ":set splitright<CR>:vsplit<CR>", opts)
 -- cursor jumper between screen
 vim.keymap.set("n", "<leader>l", "<c-w>l", opts)
 vim.keymap.set("n", "<leader>k", "<c-w>k", opts)
@@ -57,12 +57,12 @@ vim.keymap.set("n", "<leader>j", "<c-w>j", opts)
 vim.keymap.set("n", "qf", "<c-w>o", opts)
 
 -- set split screen preference
-vim.keymap.set("n", "sv", "<C-w>t<C-w>H", opts)
-vim.keymap.set("n", "sh", "<C-w>t<C-w>K", opts)
--- rotate screen
-vim.keymap.set("n", "srh", "<C-w>b<C-w>K", opts)
-vim.keymap.set("n", "srv", "<C-w>b<C-w>H", opts)
-
+vim.keymap.set("n", "<C-s>v", "<C-w>t<C-w>H", opts)
+vim.keymap.set("n", "<C-s>h", "<C-w>t<C-w>K", opts)
+-- -- rotate screen
+vim.keymap.set("n", "<C-s>rh", "<C-w>b<C-w>K", opts)
+vim.keymap.set("n", "<C-s>rv", "<C-w>b<C-w>H", opts)
+--
 -- adjust window size
 vim.keymap.set("n", "<up>", ":res +5<cr>", opts)
 vim.keymap.set("n", "<down>", ":res -5<cr>", opts)
