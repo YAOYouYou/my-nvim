@@ -153,10 +153,10 @@ local config = {
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     show_on_dirs = true,
     show_on_open_dirs = true,
-    timeout = 400,
+    timeout = 200,
   },
   modified = {
     enable = false,
