@@ -1,5 +1,1 @@
-local noice = require("noice")
-
-noice.setup()
-
-
+require("noice").setup()

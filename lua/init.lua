@@ -1,3 +1,4 @@
+vim = vim
 -- load config
 require("basic")
 require("keymaps")
@@ -22,7 +23,6 @@ require("better.whichkey")
 require("better.telescope")
 require("better.toggleterm")
 require("better.aerial")
-require("better.noice")
 require("better.undotree")
 require("better.indentline")
 require("better.nvim-treesitter")

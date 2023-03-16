@@ -2,7 +2,7 @@ local keymap = vim.api.nvim_set_keymap
 local M = {}
 local opts = { noremap = true, silent = true }
 -- NvimTree
-keymap('n', 'tt', ':lua require("nvim-tree").toggle()<CR>', { desc = "NvimTree Toggle" })
+vim.keymap.set('n', 'tt', require('nvim-tree.api').tree.toggle, {desc = "NvimTree Toggle"})
 
 -- neogit
 keymap("n", "<leader>gs", "<cmd>Neogit kind=tab<cr>", { desc = "Open Neogit" })
@@ -64,11 +64,11 @@ M.toggleterm_keymaps = function()
 end
 
 -- dap
-vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
-vim.keymap.set("n", "<F9>", ":lua require'dap'.step_into()<CR>", opts)
-vim.keymap.set("n", "<F10>", ":lua require'dap'.step_over()<CR>", opts)
-vim.keymap.set("n", "<F11>", ":lua require'dap'.step_out()<CR>", opts)
-vim.keymap.set("n", "<Leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+vim.keymap.set('n', '<F5>', require('dap').continue, opts)
+vim.keymap.set("n", "<F9>", require'dap'.step_into, opts)
+vim.keymap.set("n", "<F10>", require'dap'.step_over, opts)
+vim.keymap.set("n", "<F11>", require'dap'.step_out, opts)
+vim.keymap.set("n", "<Leader>b", require'dap'.toggle_breakpoint, opts)
 vim.keymap.set(
 	"n",
 	"<Leader>B",
@@ -81,8 +81,8 @@ vim.keymap.set(
 	":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
 	opts
 )
-vim.keymap.set("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", opts)
-vim.keymap.set("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", opts)
+vim.keymap.set("n", "<Leader>dr", require'dap'.repl.open, opts)
+vim.keymap.set("n", "<Leader>dl", require'dap'.run_last, opts)
 
 
 
