@@ -7,6 +7,30 @@ end
 local Term = require("toggleterm.terminal")
 local Terminal = Term.Terminal
 
+
+function get_conda_env_name()
+  local handle = io.popen("conda env list | grep \\* | cut -d ' ' -f 1")
+  local result = handle:read("*a")
+  handle:close()
+  return string.gsub(result, "%s+", "") -- 移除字符串中的空格和换行符
+end
+
+local toggleterm_on_create = function(term)
+	local env_name = get_conda_env_name()
+	local cmd_string = "source activate " .. env_name
+	require("toggleterm").exec(cmd_string, term.term_id)
+	require("toggleterm").exec("clear", term.term_id)
+	-- if term.name == 'python' then
+		-- local python_path = vim.fn.trim(vim.fn.system("which python"))
+		-- local activate_path = string.gsub(python_path, 'python', 'activate')
+		-- local env_name vim.fn.trim(vim.fn.system("conda env list | grep \* | cut -d ' ' -f 1"))
+		-- local cmd_string = "source activate " .. env_name 
+		-- vim.notify(cmd_string)
+		-- require"toggleterm".exec(cmd_string, term.term_id)
+		-- -- vim.cmd('autocmd BufEnter * lua require("toggleterm.util").exec(cmd_string, term)')
+	-- end
+end
+
 toggleterm.setup({
 	size = function(term)
 		if term.direction == "horizontal" then
@@ -15,6 +39,7 @@ toggleterm.setup({
 			return vim.o.columns * 0.3
 		end
 	end,
+	on_create = toggleterm_on_create,
 	start_in_insert = true,
 	persist_size = false,
 	highlights = {
@@ -372,7 +397,8 @@ end, {
 			return complete_list
 		end
 		if P == 11 then
-			return { "killallterm", "killsingleterm", "allterm", "singleterm", "alljob", "onejob", "killjob", "jobpid" }
+			return { "killallterm", "killsingleterm", "allterm", "singleterm", "alljob", "onejob", "killjob",
+				"jobpid" }
 		end
 	end,
 })
