@@ -18,6 +18,7 @@ require("magic.comment")
 require("magic.surround")
 -- require("magic.hop")
 require("magic.leap")
+require("magic.flit")
 require("magic.tabout")
 
 -- better
@@ -29,8 +30,8 @@ require("better.aerial")
 require("better.undotree")
 require("better.trouble")
 require("better.todo-comments")
-require("better.noice")
 require("better.osc52")
+require("better.noice")
 
 require("usercmd")
 

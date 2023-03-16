@@ -29,8 +29,8 @@ local plugins = {
 
 	"kylechui/nvim-surround",
 	'windwp/nvim-autopairs',
-	'phaazon/hop.nvim',
 	'ggandor/leap.nvim',
+	'ggandor/flit.nvim',
 	'numToStr/Comment.nvim',
 	'abecodes/tabout.nvim',
 
