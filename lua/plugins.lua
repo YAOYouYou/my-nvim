@@ -34,6 +34,7 @@ local plugins = {
 	'numToStr/Comment.nvim',
 	'abecodes/tabout.nvim',
 
+	"folke/trouble.nvim",
 	'folke/which-key.nvim',
 	'tpope/vim-sleuth',
 	'akinsho/toggleterm.nvim',
@@ -69,10 +70,11 @@ local plugins = {
 
 	'hrsh7th/nvim-cmp',
 	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-cmdline',
+	'hrsh7th/cmp-path',
 	'L3MON4D3/LuaSnip',
 	'saadparwaiz1/cmp_luasnip',
-
-	"folke/trouble.nvim",
 
 	"mfussenegger/nvim-dap",
 	"theHamsta/nvim-dap-virtual-text",

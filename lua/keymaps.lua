@@ -12,7 +12,7 @@ local opts = { noremap = true, silent = true }
 -- vim.keymap.set("n", 's', "<nop>", opts)
 
 -- save file
-vim.keymap.set({ 'n' }, '<C-s>', ':w<CR>', { desc = "Save File" })
+-- vim.keymap.set({ 'n' }, '<C-s>', ':w<CR>', { desc = "Save File" })
 
 -- all select
 vim.keymap.set({ 'n', 'i' }, '<C-a>', '<Esc>ggVG')
