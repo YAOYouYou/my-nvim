@@ -44,8 +44,9 @@ telescope.setup {
     --   mappings = mappings,
     -- },
     project = {
-      hidden_files = false,
-      -- theme = "dropdown",
+      hidden_files = true,
+      theme = "dropdown",
+      -- sync_with_nvim_tree = true, 
     },
   },
 }
@@ -54,11 +55,10 @@ telescope.setup {
 telescope.load_extension "fzf"
 telescope.load_extension "file_browser"
 telescope.load_extension "project"
-telescope.load_extension "projects"
 telescope.load_extension "aerial"
 -- telescope.load_extension "dap"
 telescope.load_extension "frecency"
 
 vim.keymap.set('n', "<leader>pp", function()
-  require("telescope").extensions.project.project { display_stype = "mininmal" }
+  require("telescope").extensions.project.project { display_stype = "full" }
 end, { desc = "List Project" })

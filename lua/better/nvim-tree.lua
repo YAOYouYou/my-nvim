@@ -1,5 +1,5 @@
 local config = {
--- BEGIN_DEFAULT_OPTS
+  -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = false,
   hijack_cursor = false,
@@ -11,7 +11,7 @@ local config = {
   sort_by = "name",
   root_dirs = {},
   prefer_startup_root = false,
-  sync_root_with_cwd = false,
+  sync_root_with_cwd = true,
   reload_on_bufenter = false,
   respect_buf_cwd = false,
   on_attach = "default",
@@ -168,7 +168,7 @@ local config = {
     change_dir = {
       enable = true,
       global = false,
-      restrict_above_cwd = false,
+      restrict_above_cwd = true,
     },
     expand_all = {
       max_folder_discovery = 300,
@@ -237,8 +237,15 @@ local config = {
       watcher = false,
     },
   },
-} -- END_DEFAULT_OPTS
+} -- END_DEFAULT_OPTSkO
 
 
 require("nvim-tree").setup(config)
 require("nvim-web-devicons").get_icons()
+local api = require('nvim-tree.api')
+local Event = api.events.Event
+
+-- api.events.subscribe(Event.TreeOpen, function(data)
+--   local project_root = require("telescope").load_extension("project").get_project_root()
+--   require("nvim-tree.lib").change_dir(project_root)
+-- end)

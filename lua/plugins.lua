@@ -48,7 +48,6 @@ local plugins = {
 	'nvim-telescope/telescope.nvim',
 	"nvim-telescope/telescope-file-browser.nvim",
 	"nvim-telescope/telescope-project.nvim",
-	"ahmedkhalf/project.nvim",
 	"cljoly/telescope-repo.nvim",
 	"stevearc/aerial.nvim",
 	"nvim-telescope/telescope-frecency.nvim",
