@@ -33,6 +33,10 @@ require("better.todo-comments")
 require("better.osc52")
 require("better.noice")
 
+-- note
+require("note.neorg")
+require("note.markdown-preview")
+
 require("usercmd")
 
 -- lsp

@@ -109,8 +109,10 @@ local plugins = {
 		end,
 	},
 	"lewis6991/gitsigns.nvim",
+
 	"iamcco/markdown-preview.nvim",
 	"dhruvasagar/vim-table-mode",
+	"nvim-neorg/neorg",
 }
 
 
