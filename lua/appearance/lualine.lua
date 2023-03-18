@@ -40,8 +40,6 @@ local lsp_client = {
     end
     return msg
   end,
-  -- icon = " LSP:",
-  -- icon = "🏗︎ LSP:",
   icon = "👻 :",
   color = { --[[ fg = "#ffffff", ]]
     gui = "bold",
@@ -71,11 +69,45 @@ local noice_command = {
   color = fg "Statement",
 }
 
+
+local diagnostics = {
+  'diagnostics',
+  sources = { 'nvim_diagnostic', 'nvim_lsp' },
+  sections = { 'error', 'warn', 'info', 'hint' },
+  colored = true, -- Displays diagnostics status in color if set to true.
+  update_in_insert = false, -- Update diagnostics in insert mode.
+  always_visible = false, -- Show diagnostics even if there are none.
+  on_click = function()
+    vim.cmd("TroubleToggle document_diagnostics")
+  end
+}
+
+local fileformat = {
+  'fileformat',
+  symbols = {
+    unix = '', -- e712
+    dos = '', -- e70f
+    mac = '', -- e711
+  }
+}
+
+local resource_used = {
+  function()
+    -- local mem_used = math.ceil(vim.fn.system('ps -o rss= -p ' .. tostring(vim.fn.getpid())) / 1024)
+    -- local buffers = vim.fn.bufnr('$')
+    -- local file_type = vim.bo.filetype:upper()
+    -- return string.format('%s %sMB %s', file_type, mem_used, buffers)
+  end,
+  color = { fg = '#FFFFFF', bg = '#444444' },
+  padding = { left = 0, right = 0 },
+}
+
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = '' },
+    component_separators = { left = '|', right = '|' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
@@ -92,9 +124,9 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_b = { 'branch', 'diff', diagnostics },
     lualine_c = { lsp_client, noice_mode, noice_command },
-    lualine_x = { 'filename', 'encoding', 'fileformat', 'filetype' },
+    lualine_x = { 'encoding', fileformat, 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
   },
