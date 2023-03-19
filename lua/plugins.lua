@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	-- { 'echasnovski/mini.nvim', version = '*' },
 
+	'folke/tokyonight.nvim',
 	'goolord/alpha-nvim',
 	'nvim-lua/plenary.nvim',
 	'navarasu/onedark.nvim',
