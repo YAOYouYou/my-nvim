@@ -1,18 +1,12 @@
-local status, toggleterm = pcall(require, "toggleterm")
-if not status then
-	---@diagnostic disable-next-line: param-type-mismatch
-	vim.notify("没有找到 toggleterm", "error")
-	return
-end
+local toggleterm = require("toggleterm")
 local Term = require("toggleterm.terminal")
 local Terminal = Term.Terminal
 
-
 function get_conda_env_name()
-  local handle = io.popen("conda env list | grep \\* | cut -d ' ' -f 1")
-  local result = handle:read("*a")
-  handle:close()
-  return string.gsub(result, "%s+", "") -- 移除字符串中的空格和换行符
+	local handle = io.popen("conda env list | grep \\* | cut -d ' ' -f 1")
+	local result = handle:read("*a")
+	handle:close()
+	return string.gsub(result, "%s+", "") -- 移除字符串中的空格和换行符
 end
 
 local toggleterm_on_create = function(term)
@@ -20,16 +14,7 @@ local toggleterm_on_create = function(term)
 	local cmd_string = "source activate " .. env_name
 	require("toggleterm").exec(cmd_string, term.term_id)
 	require("toggleterm").exec("clear", term.term_id)
-	-- if term.name == 'python' then
-		-- local python_path = vim.fn.trim(vim.fn.system("which python"))
-		-- local activate_path = string.gsub(python_path, 'python', 'activate')
-		-- local env_name vim.fn.trim(vim.fn.system("conda env list | grep \* | cut -d ' ' -f 1"))
-		-- local cmd_string = "source activate " .. env_name 
-		-- vim.notify(cmd_string)
-		-- require"toggleterm".exec(cmd_string, term.term_id)
-		-- -- vim.cmd('autocmd BufEnter * lua require("toggleterm.util").exec(cmd_string, term)')
-	-- end
-end
+end;
 
 toggleterm.setup({
 	size = function(term)
@@ -49,6 +34,12 @@ toggleterm.setup({
 		NormalFloat = {
 			link = "Normal",
 		},
+	},
+	winbar = {
+		enabled = true,
+		name_formatter = function(term) --  term: Terminal
+			return term.id
+		end
 	},
 })
 

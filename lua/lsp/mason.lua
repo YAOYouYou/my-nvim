@@ -1,16 +1,11 @@
 local servers = {
 	"lua_ls",
-	-- "cssls",
-	-- "html",
 	"gopls",
 	"rust_analyzer",
-	-- "tsserver",
 	"pyright",
-	-- "bashls",
 	"jsonls",
-	-- "yamlls",
 }
-
+require('neodev').setup()
 local settings = {
 	ui = {
 		border = "none",

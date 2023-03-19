@@ -48,7 +48,6 @@ require("dap.setup")
 -- test
 require("test.setup")
 
-require("overseer.setup")
 -- cmp
 require("cmp.setup")
 
