@@ -2,9 +2,13 @@ return {
   name = "run script",
   builder = function()
     local file = vim.fn.expand("%:p")
+    vim.notify(vim.bo.filetype)
     local cmd = { file }
     if vim.bo.filetype == "go" then
       cmd = { "go", "run", file }
+    end
+    if vim.bo.filetype == 'python' then
+      cmd = { "python", file }
     end
     return {
       cmd = cmd,

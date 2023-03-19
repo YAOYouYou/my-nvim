@@ -1,5 +1,5 @@
 if has("wsl")
-	if empty("$SSH_CLIENT") then
+	| if empty("$SSH_CLIENT") then |
 		let g:clipboard = {
 					\   'name': 'WslClipboard',
 					\   'copy': {

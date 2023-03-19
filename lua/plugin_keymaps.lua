@@ -86,5 +86,7 @@ vim.keymap.set(
 vim.keymap.set("n", "<Leader>dr", require'dap'.repl.open, opts)
 vim.keymap.set("n", "<Leader>dl", require'dap'.run_last, opts)
 
-
+-- overseer
+vim.keymap.set("n", "<leader>ct", require("overseer").toggle, opts)
+vim.keymap.set('n', "<leader>cr", function() require('overseer').run_template({name="run script"}) end, opts)
 return M
