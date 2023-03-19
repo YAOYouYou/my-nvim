@@ -93,13 +93,10 @@ local fileformat = {
 
 local resource_used = {
   function()
-    -- local mem_used = math.ceil(vim.fn.system('ps -o rss= -p ' .. tostring(vim.fn.getpid())) / 1024)
-    -- local buffers = vim.fn.bufnr('$')
-    -- local file_type = vim.bo.filetype:upper()
-    -- return string.format('%s %sMB %s', file_type, mem_used, buffers)
+    local mem_used = math.ceil(vim.fn.system('ps -o rss= -p ' .. tostring(vim.fn.getpid())) / 1024)
+    return string.format('%sMB', mem_used)
   end,
-  color = { fg = '#FFFFFF', bg = '#444444' },
-  padding = { left = 0, right = 0 },
+  color = { fg ='#00E5EE'},
 }
 
 
@@ -127,8 +124,9 @@ require('lualine').setup {
     lualine_b = { 'branch', 'diff', diagnostics },
     lualine_c = { lsp_client, noice_mode, noice_command },
     lualine_x = { 'encoding', fileformat, 'filetype' },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' }
+    lualine_y = { },
+    lualine_z = { 'progress', 'location' }
+
   },
   inactive_sections = {
     lualine_a = {},
