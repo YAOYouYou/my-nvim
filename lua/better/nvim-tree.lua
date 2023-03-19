@@ -242,3 +242,4 @@ local config = {
 
 require("nvim-tree").setup(config)
 require("nvim-web-devicons").get_icons()
+
