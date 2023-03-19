@@ -50,7 +50,7 @@ local config = {
   renderer = {
     add_trailing = false,
     group_empty = false,
-    highlight_git = false,
+    highlight_git = true,
     full_name = false,
     highlight_opened_files = "none",
     highlight_modified = "none",
@@ -242,10 +242,3 @@ local config = {
 
 require("nvim-tree").setup(config)
 require("nvim-web-devicons").get_icons()
-local api = require('nvim-tree.api')
-local Event = api.events.Event
-
--- api.events.subscribe(Event.TreeOpen, function(data)
---   local project_root = require("telescope").load_extension("project").get_project_root()
---   require("nvim-tree.lib").change_dir(project_root)
--- end)

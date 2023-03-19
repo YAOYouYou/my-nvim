@@ -19,6 +19,7 @@ telescope.setup {
     border = {},
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     color_devicons = true,
+initial_mode = 'normal'
   },
   pickers = {
     find_files = {
@@ -44,7 +45,7 @@ telescope.setup {
     --   mappings = mappings,
     -- },
     project = {
-      hidden_files = true,
+      hidden = true,
       theme = "dropdown",
       -- sync_with_nvim_tree = true, 
     },
@@ -60,5 +61,5 @@ telescope.load_extension "aerial"
 telescope.load_extension "frecency"
 
 vim.keymap.set('n', "<leader>pp", function()
-  require("telescope").extensions.project.project { display_stype = "full" }
+  require("telescope").extensions.project.project { display_type = "full" }
 end, { desc = "List Project" })

@@ -24,6 +24,8 @@ vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', "<leader>vo", ":Telescope aerial<cr>", { desc = "Code Outline" })
+vim.keymap.set('n', '<leader>pp', require('telescope').extensions.project.project, {desc='Open Project List'})
+vim.keymap.set('n', '<leader>fu', function()  require('telescope').extensions.frecency.frecency({workspace = 'CWD'}) end, {desc="Find frecency opened files"})
 -- todo-comments
 vim.keymap.set("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
 vim.keymap.set("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
