@@ -1,5 +1,5 @@
 if has("wsl")
-	| if empty("$SSH_CLIENT") then |
+	| if empty($SSH_CLIENT)
 		let g:clipboard = {
 					\   'name': 'WslClipboard',
 					\   'copy': {
@@ -16,4 +16,7 @@ if has("wsl")
 endif
 
 lua require("init")
+ 
+
+colorscheme tokyonight-storm
  

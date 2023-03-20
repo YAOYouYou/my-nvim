@@ -95,8 +95,8 @@ local plugins = {
 	-- 'tpope/vim-rhubarb',
 	-- 'lewis6991/gitsigns.nvim',
 
-	"sindrets/diffview.nvim",
 	"TimUntersberger/neogit",
+	"sindrets/diffview.nvim",
 	{
 		"tpope/vim-fugitive",
 		cmd = { "Git", "GBrowse", "Gdiffsplit", "Gvdiffsplit" },
