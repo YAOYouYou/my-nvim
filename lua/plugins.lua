@@ -25,6 +25,7 @@ local plugins = {
 	'nvim-lualine/lualine.nvim',
 	'akinsho/bufferline.nvim',
 	'nvim-tree/nvim-tree.lua',
+	"utilyre/barbecue.nvim", "SmiteshP/nvim-navic",
 	'nvim-tree/nvim-web-devicons',
 	'lukas-reineke/indent-blankline.nvim',
 

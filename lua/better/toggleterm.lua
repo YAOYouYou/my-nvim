@@ -12,8 +12,8 @@ end
 local toggleterm_on_create = function(term)
 	local env_name = get_conda_env_name()
 	local cmd_string = "source activate " .. env_name
-	require("toggleterm").exec(cmd_string, term.term_id)
-	require("toggleterm").exec("clear", term.term_id)
+	-- require("toggleterm").exec(cmd_string, term.term_id)
+	-- require("toggleterm").exec("clear", term.term_id)
 end;
 
 toggleterm.setup({
@@ -47,6 +47,7 @@ local lazygit = Terminal:new({
 	cmd = "lazygit",
 	dir = "git_dir",
 	direction = "float",
+	on_create = nil,
 	-- hidden = true,
 	float_opts = {
 		border = "rounded",
