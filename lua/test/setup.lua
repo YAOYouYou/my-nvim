@@ -22,7 +22,8 @@ local config = {
       --   ...
       -- end,
 
-    })
+    }),
+    require("neotest-go"),
   },
   benchmark = {
     enabled = true
