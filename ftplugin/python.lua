@@ -1,17 +1,25 @@
-vim = vim
-vim.opt_local.expandtab = true
-vim.opt_local.shiftwidth = 4
-vim.opt_local.tabstop = 4
-vim.opt_local.softtabstop = 4
+-- 设置 tab 宽度为 4
+vim.op_local.expandtab = true
+vim.op_local.tabstop = 4
+vim.op_local.softtabstop = 4
+vim.op_local.shiftwidth = 4
 
--- more info: https://neovim.io/doc/user/options.html#'spelloptions'
--- 拼写检查 识别驼峰命名法
-vim.opt_local.spelloptions = "camel"
-vim.cmd("setlocal spell spelllang=en_us,cjk") -- switch spell check on
+-- 启用自动缩进
+vim.op_local.autoindent = true
+vim.op_local.smartindent = true
 
--- fold method use treesitter
-vim.opt_local.foldmethod = "expr"
-vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
--- 默认不要折叠
--- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
-vim.opt.foldlevel = 99
+-- 启用语法检查
+vim.op_local.spell = true
+vim.op_local.spelllang = "en"
+
+-- 启用代码折叠
+vim.op_local.foldmethod = "expr"
+vim.op_local.foldexpr = "nvim_treesitter#foldexpr()"
+vim.op_local.foldlevel = 99
+
+
+-- 设置蛇形命名风格
+vim.api.nvim_command('augroup Python')
+vim.api.nvim_command('autocmd!')
+vim.api.nvim_command('autocmd FileType python setlocal iskeyword+=_')
+vim.api.nvim_command('augroup END')
