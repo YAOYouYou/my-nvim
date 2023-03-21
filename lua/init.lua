@@ -24,7 +24,6 @@ require("magic.tabout")
 -- better
 require("better.nvim-tree")
 require("better.whichkey")
-require("better.telescope")
 require("better.toggleterm")
 require("better.aerial")
 require("better.undotree")
@@ -32,6 +31,8 @@ require("better.trouble")
 require("better.todo-comments")
 require("better.osc52")
 require("better.noice")
+
+require('telescope.setup')
 
 -- note
 require("note.neorg")
