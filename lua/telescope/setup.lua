@@ -24,6 +24,7 @@ telescope.setup {
       -- theme = "dropdown",
       -- previewer = false,
       -- hidden = true,
+      no_ignore = true,
       find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
     },
     git_files = {
