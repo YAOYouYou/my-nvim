@@ -1,5 +1,7 @@
+require("lsp.neodev")
+require("lsp.diagnostics")
 require("lsp.mason")
-require("lsp.handlers").setup()
+require('lsp.lspconfig')
 require("lsp.null-ls")
 require("lsp.fidget")
-
+require('lsp.lspsaga')

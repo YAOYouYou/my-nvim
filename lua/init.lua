@@ -16,7 +16,6 @@ require("vcs.setup")
 require("magic.autopairs")
 require("magic.comment")
 require("magic.surround")
--- require("magic.hop")
 require("magic.leap")
 require("magic.flit")
 require("magic.tabout")
@@ -40,7 +39,6 @@ require("note.markdown-preview")
 
 require("usercmd")
 
--- lsp
 require("lsp.setup")
 
 -- dap

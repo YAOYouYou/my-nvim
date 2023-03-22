@@ -67,6 +67,7 @@ local plugins = {
 	'williamboman/mason.nvim',
 	'williamboman/mason-lspconfig.nvim',
 	"jose-elias-alvarez/null-ls.nvim", -- inject LSP diagnostics, code actions, and more
+	"glepnir/lspsaga.nvim",
 	'j-hui/fidget.nvim',
 
 	'hrsh7th/nvim-cmp',
