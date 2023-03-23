@@ -1,11 +1,10 @@
-local keymap = vim.api.nvim_set_keymap
 local M = {}
 local opts = { noremap = true, silent = true }
 -- NvimTree
 vim.keymap.set('n', 'tt', require('nvim-tree.api').tree.toggle, {desc = "NvimTree Toggle"})
 
 -- neogit
-keymap("n", "<leader>gs", "<cmd>Neogit kind=tab<cr>", { desc = "Open Neogit" })
+vim.keymap.set("n", "<leader>gs", "<cmd>Neogit kind=tab<cr>", { desc = "Open Neogit" })
 
 
 -- telescope
@@ -35,16 +34,17 @@ vim.keymap.set('n', '<leader>U', vim.cmd.UndotreeToggle, { desc = "UndotreeToggl
 
 -- lsp
 M.lsp_keymaps = function(bufnr)
-	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
 	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	keymap(bufnr, "n", 'gb', "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 	keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	keymap(bufnr, "n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
+	keymap(bufnr, "n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 	keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 	keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 	keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)

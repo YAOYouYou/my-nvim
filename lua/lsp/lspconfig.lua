@@ -17,21 +17,11 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
 vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
 
-local border = {
-      {"🭽", "FloatBorder"},
-      {"▔", "FloatBorder"},
-      {"🭾", "FloatBorder"},
-      {"▕", "FloatBorder"},
-      {"🭿", "FloatBorder"},
-      {"▁", "FloatBorder"},
-      {"🭼", "FloatBorder"},
-      {"▏", "FloatBorder"},
-}
 
 -- LSP settings (for overriding per client)
 local handlers =  {
-  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
-  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = "rounded"}),
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = "rounded" }),
 }
 
 local servers = require('lsp.servers')
@@ -42,7 +32,7 @@ for _, server in pairs(servers) do
 	opts = {
 		on_attach = on_attach,
 		capabilities = capabilities,
-		handlers = handlers,
+		-- handlers = handlers,
 	}
 	-- server = vim.split(server, "@")[1]
 	local require_ok, conf_opts = pcall(require, "lsp.settings." .. server)
