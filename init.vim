@@ -18,5 +18,4 @@ endif
 lua require("init")
  
 
-colorscheme tokyonight-storm
  

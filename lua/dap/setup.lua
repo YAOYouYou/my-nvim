@@ -56,6 +56,10 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 	vim.cmd("stopinsert")
 end
 
+-- vim.highlight.create('DapStopped', { ctermbg=0, guifg='#98c379', guibg='#31353f' }, false)
+vim.cmd([[highlight DapStopped ctermbg=0 guifg=#98c379 guibg=#31353f ]])
+-- vim.api.nvim_set_hl_ns
+
 vim.fn.sign_define("DapBreakpoint", {
 	text = "👉",
 	texthl = "LspDiagnosticsSignError",
@@ -66,10 +70,16 @@ vim.fn.sign_define("DapBreakpoint", {
 vim.fn.sign_define("DapStopped", {
 	-- text = "🤔",
 	text = "🧪",
-	texthl = "LspDiagnosticsSignInformation",
-	linehl = "DiagnosticUnderlineInfo",
-	numhl = "LspDiagnosticsSignInformation",
+	texthl = "",
+	-- texthl = "DapStopped",
+	linehl = "DapStopped",
+	-- linehl = "DiagnosticUnderlineInfo",
+	numhl = "DapStopped",
+	-- numhl = "DapStopped",
+	-- colorhl = 'DapStoppedBg',
 })
+-- vim.cmd([[highlight DapStoppedBg ctermbg=red guibg=red]])
+
 
 vim.fn.sign_define("DapBreakpointRejected", {
 	-- text = "😢",

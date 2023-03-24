@@ -6,6 +6,9 @@ require("plugins")
 
 -- apperance
 require("appearance.setup")
+
+vim.cmd[[colorscheme tokyonight-storm]]
+-- " colorscheme tokyonight-storm
 require("better.indentline")
 require("better.nvim-treesitter")
 
