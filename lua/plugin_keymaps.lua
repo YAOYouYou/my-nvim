@@ -1,11 +1,12 @@
 local M = {}
+
 local opts = { noremap = true, silent = true }
+
 -- NvimTree
-vim.keymap.set('n', 'tt', require('nvim-tree.api').tree.toggle, {desc = "NvimTree Toggle"})
+vim.keymap.set('n', 'tt', require('nvim-tree.api').tree.toggle, { desc = "NvimTree Toggle" })
 
 -- neogit
 vim.keymap.set("n", "<leader>gs", "<cmd>Neogit kind=tab<cr>", { desc = "Open Neogit" })
-
 
 -- telescope
 vim.keymap.set('n', '<leader>/', function()
@@ -23,8 +24,9 @@ vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', "<leader>vo", ":Telescope aerial<cr>", { desc = "Code Outline" })
-vim.keymap.set('n', '<leader>pp', require('telescope').extensions.project.project, {desc='Open Project List'})
-vim.keymap.set('n', '<leader>fu', function()  require('telescope').extensions.frecency.frecency({workspace = 'CWD'}) end, {desc="Find frecency opened files"})
+vim.keymap.set('n', '<leader>pp', require('telescope').extensions.project.project, { desc = 'Open Project List' })
+vim.keymap.set('n', '<leader>fu', function() require('telescope').extensions.frecency.frecency({ workspace = 'CWD' }) end,
+	{ desc = "Find frecency opened files" })
 -- todo-comments
 vim.keymap.set("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
 vim.keymap.set("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
@@ -34,24 +36,19 @@ vim.keymap.set('n', '<leader>U', vim.cmd.UndotreeToggle, { desc = "UndotreeToggl
 
 -- lsp
 M.lsp_keymaps = function(bufnr)
-	local keymap = vim.api.nvim_buf_set_keymap
-	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	keymap(bufnr, "n", 'gb', "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-	keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opts)
-	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-	keymap(bufnr, "n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-	keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
-	keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-	keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-	keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-	keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-	keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, desc = "goto definition" })
+	vim.keymap.set('n', 'gD', "<cmd>Lspsaga peek_definition<cr>", {buffer=bufnr, desc="Peek Definition"})
+	vim.keymap.set('n', 'gb', vim.lsp.buf.type_definition, { buffer = bufnr, desc = "goto type_definition" })
+	vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, {buffer=bufnr, desc = "goto implementation"})
+	vim.keymap.set("n", "gh",  vim.lsp.buf.hover, {buffer=bufnr, desc="hover"})
+	vim.keymap.set('n', 'gr', "<cmd>Lspsaga lsp_finder<cr>", {buffer=bufnr, desc = "references"})
+	vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, {buffer=bufnr, desc="format document"})
+	-- TODO： 所选内容格式
+	-- vim.keymap.set('v', '<leader>lf', vim.lsp.buf.formatting, {buffer=bufnr, desc="format document"})
+	vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, {buffer=bufnr, desc="rename"})
+	vim.keymap.set('n', '<leader>ld', vim.diagnostic.open_float, {buffer=bufnr, desc = "show diagnostic"})
+	vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, {buffer=bufnr, desc = "signature_help"})
+	vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, {buffer=bufnr, desc = "code action"})
 end
 
 -- toggleterm
@@ -67,10 +64,10 @@ end
 
 -- dap
 vim.keymap.set('n', '<F5>', require('dap').continue, opts)
-vim.keymap.set("n", "<F9>", require'dap'.step_into, opts)
-vim.keymap.set("n", "<F10>", require'dap'.step_over, opts)
-vim.keymap.set("n", "<F11>", require'dap'.step_out, opts)
-vim.keymap.set("n", "<Leader>b", require'dap'.toggle_breakpoint, opts)
+vim.keymap.set("n", "<F9>", require 'dap'.step_into, opts)
+vim.keymap.set("n", "<F10>", require 'dap'.step_over, opts)
+vim.keymap.set("n", "<F11>", require 'dap'.step_out, opts)
+vim.keymap.set("n", "<Leader>b", require 'dap'.toggle_breakpoint, opts)
 vim.keymap.set(
 	"n",
 	"<Leader>B",
@@ -83,10 +80,10 @@ vim.keymap.set(
 	":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
 	opts
 )
-vim.keymap.set("n", "<Leader>dr", require'dap'.repl.open, opts)
-vim.keymap.set("n", "<Leader>dl", require'dap'.run_last, opts)
+vim.keymap.set("n", "<Leader>dr", require 'dap'.repl.open, opts)
+vim.keymap.set("n", "<Leader>dl", require 'dap'.run_last, opts)
 
 -- overseer
 vim.keymap.set("n", "<leader>ct", require("overseer").toggle, opts)
-vim.keymap.set('n', "<leader>cr", function() require('overseer').run_template({name="run script"}) end, opts)
+vim.keymap.set('n', "<leader>cr", function() require('overseer').run_template({ name = "run script" }) end, opts)
 return M
