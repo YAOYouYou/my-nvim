@@ -4,7 +4,7 @@ return {
       event = "VeryLazy",
       opts = {
         options = {
-          mode = "tabs", -- tabs or buffers
+          -- mode = "tabs", -- tabs or buffers
           numbers = "buffer_id",
           diagnostics = "nvim_lsp",
           always_show_bufferline = false,
