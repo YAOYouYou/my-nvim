@@ -19,7 +19,7 @@ return {
 			"jay-babu/mason-null-ls.nvim",
 		},
 		opts = {
-			servers = { pyright = {}, gopls = {}, lua_ls = {} },
+			servers = {"pyright", "gopls", "lua_ls"},
 		},
 		config = function(plugin, opts)
 			require("plugins.lsp.servers").setup(plugin, opts)

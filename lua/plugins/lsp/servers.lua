@@ -60,35 +60,39 @@ local function lsp_init()
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, config.float)
 end
 
-local masonsetup = function(servers)
+local servers = {
+    "pyright",
+    "gopls",
+    "lua_ls",
+}
+
+local masonsetup = function()
 	masonconfig.setup({
 		ensure_installed = servers,
 		automatic_installation = true,
 	})
 end
 
-local lspsetup = function(servers)
-	lsp_utils.on_attach(function(client, buffer)
+local lspsetup = function()
+    local opts = {
+        capabilities = lsp_utils.capabilities()
+    }
+    for _, server in pairs(servers) do
+        lspconfig[server].setup(opts)
+    end
+end
+
+
+function M.setup(_, _)
+    lsp_utils.on_attach(function(client, buffer)
 		require("plugins.lsp.format").on_attach(client, buffer)
 		require("plugins.lsp.keymaps").on_attach(client, buffer)
 	end)
 
 	lsp_init() -- diagnostics, handlers
-end
 
-local lsp_setup = function() end
-
-function M.setup(_, opts)
-	local servers = opts.servers
-	require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
-	require("mason-lspconfig").setup_handlers({
-		function(server)
-			local server_opts = servers[server] or {}
-			server_opts.capabilities = lsp_utils.capabilities()
-
-			require("lspconfig")[server].setup(server_opts)
-		end,
-	})
+    masonsetup()
+    lspsetup()
 end
 
 return M
