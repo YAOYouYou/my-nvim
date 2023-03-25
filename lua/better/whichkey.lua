@@ -1,2 +1,2 @@
 local config = {}
-require("which-key").setup(config)
+-- require("which-key").setup(config)
