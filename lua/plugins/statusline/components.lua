@@ -77,23 +77,6 @@ return {
         end
       end
 
-      -- add formatter
-      local lsp_utils = require "plugins.lsp.utils"
-      local formatters = lsp_utils.list_formatters(buf_ft)
-      vim.list_extend(buf_client_names, formatters)
-
-      -- add linter
-      local linters = lsp_utils.list_linters(buf_ft)
-      vim.list_extend(buf_client_names, linters)
-
-      -- add hover
-      local hovers = lsp_utils.list_hovers(buf_ft)
-      vim.list_extend(buf_client_names, hovers)
-
-      -- add code action
-      local code_actions = lsp_utils.list_code_actions(buf_ft)
-      vim.list_extend(buf_client_names, code_actions)
-
       local hash = {}
       local client_names = {}
       for _, v in ipairs(buf_client_names) do
