@@ -1,4 +1,4 @@
-if has("wsl")
+if has("wsl") 
 	if empty($SSH_CLIENT)
 		let g:clipboard = {
 					\   'name': 'WslClipboard',

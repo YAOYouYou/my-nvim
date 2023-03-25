@@ -25,25 +25,25 @@ return {
             dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
         }
 
-        for _, button in ipairs(dashboard.section.buttons.val) do
-            button.opts.hl = "AlphaButtons"
-            button.opts.hl_shortcut = "AlphaShortcut"
-          end
-          dashboard.section.footer.opts.hl = "Constant"
-          dashboard.section.header.opts.hl = "AlphaHeader"
-          dashboard.section.buttons.opts.hl = "AlphaButtons"
-          dashboard.opts.layout[1].val = 0
+        -- for _, button in ipairs(dashboard.section.buttons.val) do
+        --     button.opts.hl = "AlphaButtons"
+        --     button.opts.hl_shortcut = "AlphaShortcut"
+        --   end
+        --   dashboard.section.footer.opts.hl = "Constant"
+        --   dashboard.section.header.opts.hl = "AlphaHeader"
+        --   dashboard.section.buttons.opts.hl = "AlphaButtons"
+        --   dashboard.opts.layout[1].val = 0
       
-          -- close Lazy and re-open when the dashboard is ready
-          if vim.o.filetype == "lazy" then
-            vim.cmd.close()
-            vim.api.nvim_create_autocmd("User", {
-              pattern = "AlphaReady",
-              callback = function()
-                require("lazy").show()
-              end,
-            })
-          end
+        --   -- close Lazy and re-open when the dashboard is ready
+        --   if vim.o.filetype == "lazy" then
+        --     vim.cmd.close()
+        --     vim.api.nvim_create_autocmd("User", {
+        --       pattern = "AlphaReady",
+        --       callback = function()
+        --         require("lazy").show()
+        --       end,
+        --     })
+        --   end
       
           require("alpha").setup(dashboard.opts)
       

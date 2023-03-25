@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Configure lazy.nvim
 require("lazy").setup({
   spec = {
-    { import = "plugins_abc" },
+    { import = "plugins" },
   },
   defaults = { lazy = true, version = false }, -- always use the latest git commit
   checker = { enabled = true }, -- automatically check for plugin updates
