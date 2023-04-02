@@ -1,13 +1,13 @@
 local lspconfig = require("lspconfig")
-local lsp_keymaps = require("plugin_keymaps").lsp_keymaps
+local lsp_keymaps = require("config.plugin_keymaps").lsp_keymaps
 
 local on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
-	end
-	illuminate.on_attach(client)
+	-- local status_ok, illuminate = pcall(require, "illuminate")
+	-- if not status_ok then
+	-- 	return
+	-- end
+	-- illuminate.on_attach(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
