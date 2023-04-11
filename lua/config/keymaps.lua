@@ -1,17 +1,4 @@
 local opts = { noremap = true, silent = true }
--- quick esc
---vim.keymap.set("n", "<c-u>", ":w<enter>", opts)
-
--- -- Remap for dealing with word wrap
--- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
--- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
-
--- del s
--- vim.keymap.set("n", 's', "<nop>", opts)
-
--- save file
--- vim.keymap.set({ 'n' }, '<C-s>', ':w<CR>', { desc = "Save File" })
 
 -- all select
 vim.keymap.set({ 'n', 'i' }, '<C-a>', '<Esc>ggVG')
@@ -80,8 +67,8 @@ vim.keymap.set("n", "tmh", ":-tabmove<cr>", opts)
 vim.keymap.set("n", "tml", ":+tabmove<cr>", opts)
 
 -- buffer switcher
-vim.keymap.set("n", "bh", ":bp<cr>", opts)
-vim.keymap.set("n", "bl", ":bn<cr>", opts)
+vim.keymap.set("n", "<leader>bh", ":bp<cr>", opts)
+vim.keymap.set("n", "<leader>bl", ":bn<cr>", opts)
 
 -- quickfix and location fix
 vim.keymap.set("n", "co", ":copen<cr>", opts)
