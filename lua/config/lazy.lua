@@ -31,4 +31,10 @@ local plugins_spec = {
     { import = "plugins.extra.ui" },
 }
 
-require('lazy').setup({ spec = plugins_spec, {} })
+require('lazy').setup({
+    spec = plugins_spec,
+    ui = {
+        border = "rounded"
+    },
+    {}
+})
