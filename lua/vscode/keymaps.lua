@@ -17,7 +17,7 @@ vim.keymap.set("n", "<Space>", "<Nop>")
 -- vim.keymap.set({ 'n' }, '<C-s>', ':w<CR>', { desc = "Save File" })
 
 -- all select
-vim.keymap.set({ 'n', 'i' }, '<C-a>', '<Esc>ggVG')
+-- vim.keymap.set({ 'n', 'i' }, '<C-a>', '<Esc>ggVG')
 -- quick movement
 vim.keymap.set("n", "J", "5j", opts)
 vim.keymap.set("n", "K", "5k", opts)
@@ -53,7 +53,7 @@ end)
 
 -- ZenMode
 vim.keymap.set("n", ",z", function ()
-    vim.fn["VSCodeNotify"]("workbench.action.toggleZenMode")
+   vim.fn["VSCodeNotify"]("workbench.action.toggleZenMode")
 end)
 
 
