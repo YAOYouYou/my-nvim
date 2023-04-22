@@ -7,7 +7,7 @@ vim.keymap.set("n", "H", "^", opts)
 vim.keymap.set("n", "L", "$", opts)
 
 vim.keymap.set("n", ";", ":")
-vim.keymap.set("n", "Q", ":q!<enter>", opts)
+vim.keymap.set("n", "Q", ":q!<cr>", opts)
 vim.keymap.set("v", "Y", '"+y', opts)
 vim.keymap.set("n", "<", "<<", opts)
 vim.keymap.set("n", ">", ">>", opts)
