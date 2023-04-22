@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
-vim.cmd[[colorscheme tokyonight-storm]]
+vim.cmd[[colorscheme onedark]]
 
 require("lsp.setup")
 

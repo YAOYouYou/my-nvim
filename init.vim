@@ -15,9 +15,4 @@ if has("wsl")
 	endif
 endif
 
-if exists('g:vscode')
-	lua require("vscode")
-else
-
-	lua require("init")
-endif
+lua require("init")
