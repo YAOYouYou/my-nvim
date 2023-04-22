@@ -3,9 +3,7 @@ local opts = { noremap = true, silent = true }
 -- all select
 vim.keymap.set({ 'n', 'i' }, '<C-a>', '<Esc>ggVG')
 -- quick movement
-vim.keymap.set("n", "J", "5j", opts)
-vim.keymap.set("n", "K", "5k", opts)
-vim.keymap.set("n", "H", "0", opts)
+vim.keymap.set("n", "H", "^", opts)
 vim.keymap.set("n", "L", "$", opts)
 
 vim.keymap.set("n", ";", ":")
