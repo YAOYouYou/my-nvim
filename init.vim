@@ -15,8 +15,4 @@ if has("wsl")
 	endif
 endif
 
-
-
-
-
 lua require("init")
